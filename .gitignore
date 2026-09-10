@@ -7,3 +7,14 @@
 
 # Ignore C/C++ binaries (no extension)
 C/**/*.out
+
+# Ignore C# build output
+C#/bin/
+C#/obj/
+
+# Common IDE/build files
+bin/
+obj/
+*.user
+*.suo
+.vs/
