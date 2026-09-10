@@ -4,7 +4,18 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-        
+        {
+            "name": "C#: Run/Debug Current File",
+            "type": "coreclr",
+            "request": "launch",
+            // Tự động tìm file .csproj hoặc chạy file hiện tại
+            "program": "${fileDirname}/bin/Debug/net8.0/${fileBasenameNoExtension}.dll", 
+            "args": [],
+            "cwd": "${fileDirname}",
+            // Ép buộc chạy và xuất kết quả ra Integrated Terminal thay vì Debug Console
+            "console": "integratedTerminal",
+            "stopAtEntry": false
+        },
         {
             "name": "Python: Current File",
             "type": "python",
@@ -28,7 +39,7 @@
                 "text": "-enable-pretty-printing",
                 "ignoreFailures": true
             }],
-            "preLaunchTask": "Auto Build C/C++",
+            "preLaunchTask": "Auto Build C/C++"
         }
     ]
 }
