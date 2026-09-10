@@ -8,13 +8,12 @@
             "name": "C#: Run/Debug Current File",
             "type": "coreclr",
             "request": "launch",
-            // Tự động tìm file .csproj hoặc chạy file hiện tại
-            "program": "${fileDirname}/bin/Debug/net8.0/${fileBasenameNoExtension}.dll", 
+            "program": "${fileDirname}/../bin/Debug/net10.0/C#.dll", 
             "args": [],
             "cwd": "${fileDirname}",
-            // Ép buộc chạy và xuất kết quả ra Integrated Terminal thay vì Debug Console
             "console": "integratedTerminal",
-            "stopAtEntry": false
+            "stopAtEntry": false,
+            "preLaunchTask": "Build C#"
         },
         {
             "name": "Python: Current File",

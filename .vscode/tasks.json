@@ -9,7 +9,19 @@
         "kind": "build",
         "isDefault": true
       },
-      "detail": "Auto detect C/C++ file by extension (Only work on Linux)"
+      "detail": "Auto detect C/C++ file by extension"
+    },
+    {"label": "Build C#",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${fileDirname}/..",
+                "/p:SelectedFile=${file}",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
     }
   ]
 }
