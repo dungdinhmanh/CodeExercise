@@ -1,4 +1,89 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Explorer</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #0f172a;
+        color: #e5e7eb;
+      }
 
+      .wrap {
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 24px;
+      }
+
+      h1 {
+        margin-bottom: 16px;
+      }
+
+      .box {
+        background: #111827;
+        border: 1px solid #374151;
+        border-radius: 12px;
+        padding: 16px 18px;
+      }
+
+      ul {
+        list-style: none;
+        padding-left: 18px;
+        margin: 8px 0;
+      }
+
+      li {
+        margin: 6px 0;
+        line-height: 1.5;
+      }
+
+      .folder {
+        color: #fbbf24;
+        font-weight: 700;
+      }
+
+      .file {
+        color: #cbd5e1;
+      }
+
+      .folder, .file {
+        cursor: pointer;
+      }
+
+      .folder:hover, .file:hover {
+        text-decoration: underline;
+      }
+
+      details {
+        margin: 4px 0;
+      }
+
+      summary {
+        cursor: pointer;
+        list-style: none;
+      }
+
+      summary::-webkit-details-marker {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <h1>web Explorer</h1>
+
+      <div class="box">
+        <ul>
+          <li class="folder">web</li>
+          <ul>
+            <li class="file">index.html</li>
+          </ul>
+        </ul>
+      </div>
+    </div>
+  </body>
 </html>
+
