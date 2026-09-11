@@ -1,0 +1,24 @@
+h1 {
+    color: #961b41;
+    text-align: center;
+    font-weight: bold;
+}
+div {
+    font-family: Tahoma;
+    font-size: 12px;
+}
+th {
+    background-color: #CC0033;
+    color: #FFFFFF;
+}
+table, th, tr, td {
+    border-collapse: collapse;
+    border: rgb(143, 106, 12) solid 2px;
+}
+td.hp {
+    color: rgb(214, 32, 72);
+    text-align: center;
+}
+td.score {
+    text-align: center;
+}
