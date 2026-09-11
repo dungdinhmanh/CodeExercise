@@ -1,5 +1,8 @@
-*
-
+img {
+    width: 50%;
+    float: left;
+    margin-right: 32px;
+}
 h1 {
     text-align: center;
     color: palevioletred;
