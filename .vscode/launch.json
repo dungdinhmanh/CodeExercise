@@ -16,6 +16,17 @@
             "preLaunchTask": "Build C#"
         },
         {
+            "name": "C#: Run/Debug Đề cương",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "${fileDirname}/../bin/Debug/net10.0/Đề cương.dll", 
+            "args": [],
+            "cwd": "${fileDirname}",
+            "console": "integratedTerminal",
+            "stopAtEntry": false,
+            "preLaunchTask": "Build C#"
+        },
+        {
             "name": "Python: Current File",
             "type": "python",
             "request": "launch",
