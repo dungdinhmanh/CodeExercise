@@ -13,7 +13,7 @@ static int input()
     } while (n<0);
     return n;
 }
-static bool check_triangle(a, b, c)
+static bool check_triangle(int a, int b, int c)
 {
     if (((a+b)>c) && ((a+c)>b) && ((b+c)>a) )
     {
