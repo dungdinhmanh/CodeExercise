@@ -15,5 +15,12 @@
       <jdbc-url>jdbc:postgresql://aws-1-ap-southeast-1.pooler.supabase.com:6543/postgres</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="TNC-db" uuid="f679071f-0b06-478c-b139-9e08b8a01147">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://tnc-db-tnc-php.a.aivencloud.com:20644/tnc-db</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>
