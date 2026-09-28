@@ -7,8 +7,18 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
+
+  <PropertyGroup Condition="'$(SelectedFile)' != ''">
+    <SelectedDir>$([System.IO.Path]::GetDirectoryName('$(SelectedFile)'))</SelectedDir>
+  </PropertyGroup>
+
   <ItemGroup>
     <Compile Remove="**/*.cs" />
-    <Compile Include="$(SelectedFile)" />
+    <Compile Include="$(SelectedFile)" Condition="'$(SelectedFile)' != ''" />
+    <!-- Class dùng chung cho mọi bài -->
+    <Compile Include="Shared/**/*.cs" />
+    <!-- Class phụ riêng cho bài đang chạy: *.Lib.cs cùng thư mục với file Main -->
+    <Compile Include="$(SelectedDir)/**/*.Lib.cs" Condition="'$(SelectedDir)' != ''" />
   </ItemGroup>
+
 </Project>

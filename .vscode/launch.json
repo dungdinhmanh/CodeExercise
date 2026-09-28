@@ -12,7 +12,7 @@
             "args": [],
             "cwd": "${fileDirname}",
             "console": "integratedTerminal",
-            "stopAtEntry": false,
+            "stopAtEntry": true,
             "preLaunchTask": "Build C#"
         },
         {

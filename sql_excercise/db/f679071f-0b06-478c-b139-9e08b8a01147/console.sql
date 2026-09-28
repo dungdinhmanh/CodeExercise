@@ -256,3 +256,6 @@ INSERT INTO order_statuses (status_code, status_name) VALUES
   ('shipping', 'Shipping'),
   ('completed', 'Completed'),
   ('cancelled', 'Cancelled');
+
+SELECT p.product_id as pid, p.product_name as name, p.sku, p.unit_price
+FROM products p
