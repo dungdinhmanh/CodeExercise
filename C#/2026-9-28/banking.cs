@@ -14,6 +14,7 @@ class Program
             Console.WriteLine("\n1. Kiểm tra tài khoản");
             Console.WriteLine("2. Nạp tiền");
             Console.WriteLine("3. Rút tiền");
+            Console.WriteLine("0. Thoát");
             Console.WriteLine("--------------");
             Console.Write("Nhập lựa chọn của bạn: ");
             choice = int.Parse(Console.ReadLine());
