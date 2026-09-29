@@ -4,7 +4,7 @@ class Torch
     public void On() => status = true;
     public void Off() => status = false;
     public string Output() => status ? "Đang bật" : "Đang tắt";
-
+    public Torch() { }
     public Torch(bool status)
     {
         this.status = status;
