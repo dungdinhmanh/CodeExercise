@@ -29,8 +29,11 @@ class SVMG
         MaSV = Console.ReadLine();
         Console.Write("Nhập tên sinh viên: ");
         TenSV = Console.ReadLine();
-        Console.Write("Nhập điểm hệ số 1: ");
-        DiemHS1 = double.Parse(Console.ReadLine());
+        do
+        {
+            Console.Write("Nhập điểm hệ số 1: ");
+            DiemHS1 = double.Parse(Console.ReadLine());
+        } while (DiemHS1 < 0 || DiemHS1 > 10);
         Console.Write("Nhập điểm hệ số 2: ");
         DiemHS2 = double.Parse(Console.ReadLine());
         Console.Write("Nhập điểm hệ số 2 lần 2: ");
