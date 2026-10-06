@@ -10,7 +10,7 @@ class SinhVien : Person
         TenMH = tenMH;
         DiemMH = diemMH;
     }
-    public SinhVien (){ }
+    public SinhVien  (){ }
     public void Output()
     {
         base.Output();
