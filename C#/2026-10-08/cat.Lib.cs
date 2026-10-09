@@ -17,6 +17,6 @@ class Cat : Animal
     }
     public override void ShowInfo()
     {
-        Console.WriteLine($"")
+        Console.WriteLine($"");
     }
 }
