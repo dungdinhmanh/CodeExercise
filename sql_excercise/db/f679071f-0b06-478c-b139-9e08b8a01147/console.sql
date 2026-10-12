@@ -259,3 +259,29 @@ INSERT INTO order_statuses (status_code, status_name) VALUES
 
 SELECT p.product_id as pid, p.product_name as name, p.sku, p.unit_price
 FROM products p
+
+SHOW CREATE TABLE users;
+SHOW CREATE TABLE addresses;
+SHOW CREATE TABLE categories;
+SHOW CREATE TABLE news_posts;
+
+SELECT
+    news_category_id,
+    category_name,
+    category_slug
+FROM news_categories;
+
+SELECT
+    p.news_post_id,
+    p.title,
+    p.post_status,
+    p.published_at,
+    c.category_name,
+    c.category_slug,
+    CHAR_LENGTH(p.content) AS content_length,
+    CHAR_LENGTH(p.excerpt) AS excerpt_length
+FROM news_posts AS p
+JOIN news_categories AS c
+    ON c.news_category_id = p.news_category_id
+WHERE c.category_slug = 'tnc-channel'
+ORDER BY p.published_at DESC;
