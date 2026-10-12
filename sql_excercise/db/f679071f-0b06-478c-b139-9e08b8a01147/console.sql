@@ -259,7 +259,6 @@ INSERT INTO order_statuses (status_code, status_name) VALUES
 
 SELECT p.product_id as pid, p.product_name as name, p.sku, p.unit_price
 FROM products p
-
 SHOW CREATE TABLE users;
 SHOW CREATE TABLE addresses;
 SHOW CREATE TABLE categories;
