@@ -2,6 +2,7 @@ using System;
 
 class Program
 {
+    static Random rnd = new Random();
     static int Input()
     {
         int n;
@@ -11,12 +12,11 @@ class Program
         } while (n < 0);
         return n;
     }
-    static List<int> CreateArray(List <int> ds)
+    static int[] CreateArray(int[] arr)
     {
-        for (int i = 0; i < ds.Count(); i++)
+        for (int i = 0; i < arr.Count(); i++)
         {
-            Random rnd = new Random();
-            ds.Add(rnd.Next(-50,50));
+            arr[i] = rnd.Next(-50,50);
         }
         return ds;
     }
