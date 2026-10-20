@@ -26,6 +26,7 @@ class Program
         int m = Input();
         Console.Write("Nhập số cột: ");
         int n = Input();
-
+        int[,] arr = new int[m,n];
+        
     }
 }
