@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 double Tong(int n){
-    if (n <= 0) return 0.5;
+    if (n <= 1) return 1;
     return Tong(n-1)*n;
 }
 
@@ -9,5 +9,6 @@ int main(){
     int n;
     printf("Nhập n: ");
     scanf("%d", &n);
-    printf("Tổng 1/2 đến %d/%d là: %lg", 2*n+1, 2*n+2, Tong(n));
+    if (n <= 1) printf("Tổng là 1.");
+    else printf("Tổng từ 1 đến %d là: %lg", n, Tong(n));
 }
