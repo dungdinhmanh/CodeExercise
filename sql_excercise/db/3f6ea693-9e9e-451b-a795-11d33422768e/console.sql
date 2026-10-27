@@ -1,0 +1,20 @@
+create table Nhanvien (
+    MaNV VARCHAR(9) NOT NULL PRIMARY KEY,
+    HoNV NVARCHAR(15) NULL,
+    TenLot NVARCHAR(30) NULL,
+    TenNV NVARCHAR(30) NULL,
+    NgSinh DATETIME,
+    DChi NVARCHAR(150) NULL,
+    Phai NVARCHAR(3) NULL,
+    Luong FLOAT NULL,
+    Ma_NQL VARCHAR(9) NULL,
+    PHG VARCHAR(2) NULL,
+    CONSTRAINT FK_Phong FOREIGN KEY (PHG) references Phongban(MaPHG)
+)
+create table Phongban
+(
+    MaPHG    VARCHAR(2)   NOT NULL PRIMARY KEY,
+    TenPHG   NVARCHAR(20) NULL,
+    TrPHG    VARCHAR(9)   NULL,
+    NG_NCHUC DATETIME     NULL,
+)
