@@ -142,7 +142,8 @@ void update() {
         count_ptr = count_ptr->next;
     } while (count_ptr != last->next);
     if (pos > total_nodes) {
-        printf("Số node của danh sách")
+        printf("Số node của danh sách (%d) nhỏ hơn vị trí %d.\n", total_nodes, pos);
+        return;
     }
     printf("Giá trị mới của node: ");
     scanf("%d", &value);
