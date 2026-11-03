@@ -16,7 +16,7 @@ struct node* create_node(int value) {
         temp->info = value;
         temp->next = NULL;
         return temp;    
-    }
+    }    
 }
 void insert_last(struct node **start, int value){
     struct node *temp = create_node(value);
