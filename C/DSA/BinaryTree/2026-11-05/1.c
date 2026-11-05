@@ -85,3 +85,23 @@ void Add_Right (Tree T, item x, item y) {
         printf("Đã thêm node %d vào con phải của node %d\n", y, x);
     }
 }
+void removeLeft(Tree T, item x) {
+    Tree p, q;
+    p = Search(T, x);
+    if (p == NULL) {
+        printf("Node cha %d không tồn tại\n", x);
+        return;
+    }
+    if (p->left == NULL) {
+        printf("Node cha %d không có nhánh trái\n", x);
+        return;
+    }
+    if (p->left->left != NULL || p->left->right != NULL) {
+        printf("Node con trái của node %d không phải là lá\n", x);
+        return;
+    }
+    q = p->left;
+    p->left = NULL;
+    freeNode(q);
+    printf("Đã xóa con trái của node %d\n", x);
+}
