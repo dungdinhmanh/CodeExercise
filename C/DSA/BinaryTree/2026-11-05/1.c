@@ -5,6 +5,7 @@ typedef struct node {
     item info;
     struct node *left;
     struct node *right;
+
 } *Tree;
 
 void Init(Tree *T) {
@@ -104,4 +105,42 @@ void removeLeft(Tree T, item x) {
     p->left = NULL;
     freeNode(q);
     printf("Đã xóa con trái của node %d\n", x);
+}
+void NLR (Tree T) { //Node-left-right
+    if (T != NULL) {
+        printf("%d ", T->info);
+        NLR(T->left);
+        NLR(T ->right);
+    }
+}
+void LNR (Tree T) { //Left-node-right
+    if (T != NULL) {
+        LNR(T->left);
+        printf("%d ", T->info);
+        LNR(T ->right);
+    }
+}
+void LRN (Tree T) { //Left-right-node
+    if (T != NULL) {
+        LRN(T->left);
+        LRN(T ->right);
+        printf("%d ", T->info);
+    }
+}
+int main() {
+    int choice = 0;
+    printf("----Menu----\n");
+    printf("1. Tạo root cây nhị phân\n");
+    printf("2. Cấp phát bộ nhớ.\n");
+    printf("3. Tạo node\n");
+    printf("4. Thêm node con trái.\n");
+    printf("5. Thêm node con phải.\n");
+    printf("------------\n");
+    printf("Nhập lựa chọn của bạn: ");
+    scanf("%d", &choice);
+    do {
+        switch (choice) {
+        
+        }
+    } while (choice !=0);
 }
