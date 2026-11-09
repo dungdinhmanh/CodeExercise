@@ -127,6 +127,58 @@ void LRN (Tree T) { //Left-right-node
         printf("%d ", T->info);
     }
 }
+int Size(Tree T) {
+    if (T == NULL) return 0;
+    else return 1 + Size(T->left) + Size(T->right);
+}
+int identicalTrees(Tree T1, Tree T2) {
+    if (T1 == NULL && T2 == NULL) return 1;
+    if (T1 != NULL && T2 != NULL) {
+        return (T1->info == T2->info && identicalTrees(T1->left, T2->left) && identicalTrees(T1->right, T2->right));
+    }
+    return 0;
+}
+int maxDepth(Tree T) {
+    if (T == NULL) return 0;
+    else {
+        int leftDepth = maxDepth(T->left);
+        int rightDepth = maxDepth(T->right);
+        if (leftDepth > rightDepth) return leftDepth + 1;
+        else return rightDepth + 1;
+    }
+}
+void mirror(Tree root) {
+    if (root == NULL) return;
+    else {
+        mirror(root->left);
+        mirror(root->right);
+        Tree temp = root->left;
+        root->left = root->right;
+        root->right = temp;
+    }
+}
+void printArray(int arr[], int size) {
+    for (int i = 0; i < size; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+}
+void printPathsRecur(Tree T, int path[], int pathLen) {
+    if (T == NULL) return;
+    path[pathLen] = T->info;
+    pathLen++;
+    if (T->left == NULL && T->right == NULL) {
+        printArray(path, pathLen);
+    } else {
+        printPathsRecur(T->left, path, pathLen);
+        printPathsRecur(T->right, path, pathLen);
+    }
+}
+unsigned int countLeaves(Tree T) {
+    if (T == NULL) return 0;
+    if (T->left == NULL && T->right == NULL) return 1;
+    else return countLeaves(T->left) + countLeaves(T->right);
+}
 int main() {
     int choice = 0;
     printf("----Menu----\n");
