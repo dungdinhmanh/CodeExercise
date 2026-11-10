@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <limits.h>
 
 struct MinHeap {
     int *harr;
@@ -71,3 +72,41 @@ void build_minheap(int *A, int n) {
         min_heapify(A, i, n);
     }
 }
+void decreaseKey(struct MinHeap* heap, int i, int new_val) {
+    heap->harr[i] = new_val;
+    while (i != 0 && heap->harr[parent(i)] > heap->harr[i]) {
+        swap(&heap->harr[i], &heap->harr[parent(i)]);
+        i = parent(i);
+    }
+}
+int extractMin(struct MinHeap* heap) {
+    if (heap->heap_size <= 0)
+        return INT_MAX;
+    if (heap->heap_size == 1) {
+        heap->heap_size--;
+        return heap->harr[0];
+    }
+    int root = heap->harr[0];
+    heap->harr[0] = heap->harr[heap->heap_size - 1];
+    heap->heap_size--;
+    MinHeapify(heap, 0);
+    return root;
+}
+void MinHeapify(struct MinHeap* heap, int i) {
+    int l = left(i);
+    int r = right(i);
+    int smallest = i;
+    if (l < heap->heap_size && heap->harr[l] < heap->harr[smallest])
+        smallest = l;
+    if (r < heap->heap_size && heap->harr[r] < heap->harr[smallest])
+        smallest = r;
+    if (smallest != i) {
+        swap(&heap->harr[i], &heap->harr[smallest]);
+        MinHeapify(heap, smallest);
+    }
+}
+void deleteKey(struct MinHeap* heap, int i) {
+    decreaseKey(heap, i, INT_MIN);
+    extractMin(heap);
+}
+ 
