@@ -122,61 +122,62 @@ int main() {
     printf("5. Sắp xếp mảng số thực theo Insertion Sort\n");
     printf("6. Sắp xếp mảng số thực theo Bubble Sort\n");
     int choice;
-    printf("Nhập lựa chọn của bạn: ");
-    scanf("%d", &choice);
-    switch (choice) {
-        case 0:
-            create_array_int(arr_i, n);
-            create_array_double(arr_d, n);
-            printf("Mảng số nguyên mới: ");
-            printArrayInt(arr_i, n);
-            printf("Mảng số thực mới: ");
-            printArrayDouble(arr_d, n);
-            break;
-        case 1:
-            printf("Mảng số nguyên trước khi sắp xếp: ");
-            printArrayInt(arr_i, n);
-            selectionSortInt(arr_i, n);
-            printf("Mảng số nguyên sau khi sắp xếp theo Selection Sort: ");
-            printArrayInt(arr_i, n);
-            break;
-        case 2:
-            printf("Mảng số nguyên trước khi sắp xếp: ");
-            printArrayInt(arr_i, n);
-            insertionSortInt(arr_i, n);
-            printf("Mảng số nguyên sau khi sắp xếp theo Insertion Sort: ");
-            printArrayInt(arr_i, n);
-            break;
-        case 3:
-            printf("Mảng số nguyên trước khi sắp xếp: ");
-            printArrayInt(arr_i, n);
-            bubbleSortInt(arr_i, n);
-            printf("Mảng số nguyên sau khi sắp xếp theo Bubble Sort: ");
-            printArrayInt(arr_i, n);
-            break;
-        case 4:
-            printf("Mảng số thực trước khi sắp xếp: ");
-            printArrayDouble(arr_d, n);
-            selectionSortDouble(arr_d, n);
-            printf("Mảng số thực sau khi sắp xếp theo Selection Sort: ");
-            printArrayDouble(arr_d, n);
-            break;
-        case 5:
-            printf("Mảng số thực trước khi sắp xếp: ");
-            printArrayDouble(arr_d, n);
-            insertionSortDouble(arr_d, n);
-            printf("Mảng số thực sau khi sắp xếp theo Insertion Sort: ");
-            printArrayDouble(arr_d, n);
-            break;
-        case 6:
-            printf("Mảng số thực trước khi sắp xếp: ");
-            printArrayDouble(arr_d, n);
-            bubbleSortDouble(arr_d, n);
-            printf("Mảng số thực sau khi sắp xếp theo Bubble Sort: ");
-            printArrayDouble(arr_d, n);
-            break;
-        default:
-            printf("Lựa chọn không hợp lệ.\n");
-            break;
-    }
+    do {
+        switch (choice) {
+            case 0:
+                create_array_int(arr_i, n);
+                create_array_double(arr_d, n);
+                printf("Mảng số nguyên mới: ");
+                printArrayInt(arr_i, n);
+                printf("Mảng số thực mới: ");
+                printArrayDouble(arr_d, n);
+                break;
+            case 1:
+                printf("Mảng số nguyên trước khi sắp xếp: ");
+                printArrayInt(arr_i, n);
+                selectionSortInt(arr_i, n);
+                printf("Mảng số nguyên sau khi sắp xếp theo Selection Sort: ");
+                printArrayInt(arr_i, n);
+                break;
+            case 2:
+                printf("Mảng số nguyên trước khi sắp xếp: ");
+                printArrayInt(arr_i, n);
+                insertionSortInt(arr_i, n);
+                printf("Mảng số nguyên sau khi sắp xếp theo Insertion Sort: ");
+                printArrayInt(arr_i, n);
+                break;
+            case 3:
+                printf("Mảng số nguyên trước khi sắp xếp: ");
+                printArrayInt(arr_i, n);
+                bubbleSortInt(arr_i, n);
+                printf("Mảng số nguyên sau khi sắp xếp theo Bubble Sort: ");
+                printArrayInt(arr_i, n);
+                break;
+            case 4:
+                printf("Mảng số thực trước khi sắp xếp: ");
+                printArrayDouble(arr_d, n);
+                selectionSortDouble(arr_d, n);
+                printf("Mảng số thực sau khi sắp xếp theo Selection Sort: ");
+                printArrayDouble(arr_d, n);
+                break;
+            case 5:
+                printf("Mảng số thực trước khi sắp xếp: ");
+                printArrayDouble(arr_d, n);
+                insertionSortDouble(arr_d, n);
+                printf("Mảng số thực sau khi sắp xếp theo Insertion Sort: ");
+                printArrayDouble(arr_d, n);
+                break;
+            case 6:
+                printf("Mảng số thực trước khi sắp xếp: ");
+                printArrayDouble(arr_d, n);
+                bubbleSortDouble(arr_d, n);
+                printf("Mảng số thực sau khi sắp xếp theo Bubble Sort: ");
+                printArrayDouble(arr_d, n);
+                break;
+            default:
+                printf("Lựa chọn không hợp lệ.\n");
+        }
+        printf("Nhập lựa chọn của bạn (0-6, hoặc -1 để thoát): ");
+        scanf("%d", &choice);
+    } while (choice != -1);
 }
